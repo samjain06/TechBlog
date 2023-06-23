@@ -94,7 +94,8 @@ def comment_approve(request, pk):
 @login_required
 def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
-    # post_pk is initialized because it will not remember content.pk  after content removed
+    # post_pk is initialized because it will not remember comment.pk after comment is
+    # removed, and we need it to get post's pk
     post_pk = comment.post.pk
     comment.delete()
     return redirect('post_detail', pk=post_pk)
