@@ -30,7 +30,7 @@ class PostDetailView(DetailView):
     model = Post
 
 
-class CreatePostView(LoginRequiredMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
     form_class = PostForm
@@ -52,6 +52,8 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 class DraftListView(LoginRequiredMixin, ListView):
     login_url = '/login/'
     redirect_field_name = 'blog/post_list.html'
+    template_name = 'blog/post_draft_list.html'
+    context_object_name = 'draft_posts'
     model = Post
 
     def get_queryset(self):
