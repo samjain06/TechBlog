@@ -11,6 +11,9 @@
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
 
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
@@ -19,37 +22,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Montserrat&display=swap" rel="stylesheet">
 
-
 </head>
 <body class="loader">
 
     <!-- Navbar -->
     <!-- custom-navbar is a customized class for future customization use-->
-    <nav class="navbar navbar-default techfont custom-navbar">
+    <nav class="navbar navbar-expand-lg bg-light techfont custom-navbar">
         <div class="container">
-            <ul class="nav navbar-nav">
 
+            <ul class="navbar-nav align-items-center">
                 <li><a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="https://www.github.com/samjain06">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/samjain06">LinkedIn</a></li>
-
+                <li><a class="nav-item nav-link" href="{% url 'about' %}">About</a></li>
+                <li><a class="nav-item nav-link" href="https://www.github.com/samjain06">GitHub</a></li>
+                <li><a class="nav-item nav-link" href="https://www.linkedin.com/in/samjain06">LinkedIn</a></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-
+            <ul class="navbar-nav align-items-center ml-auto">
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'post_new' %}">New Post</a></li>
-                    <li><a href="{% url 'post_draft_list' %}">Drafts</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                    <li><a>Welcome: {{ user.username }}</a></li>
-
+                    <li><a class="nav-item nav-link" href="{% url 'post_new' %}">New Post</a></li>
+                    <li><a class="nav-item nav-link" href="{% url 'post_draft_list' %}">Drafts</a></li>
+                    <li><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    <li><a class="nav-item nav-link">Welcome, {{ user.username }}</a></li>
                 {% else %}
-                    <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span></a></li>
-
+                    <li><a class="nav-item nav-link" href="{% url 'login' %}"><span class="fa fa-user"></span></a></li>
                 {% endif %}
-
             </ul>
+
         </div>
     </nav>
 
@@ -60,17 +58,16 @@
             <div class="col-md-8">
                 <!-- blog_posts is a custom CSS class -->
                 <div class="blog_posts">
-
                     {% block content %}
                     {% endblock %}
-
                 </div>
             </div>
         </div>
 
     </div>
 
-
+    {# SCRIPTS#}
+    <!-- <script type="text/javascript" src="{% static 'js/blog.js' %}"></script> -->
 
 </body>
 </html>
