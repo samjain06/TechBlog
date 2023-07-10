@@ -1,4 +1,4 @@
-# TechBlog
+# Tech Blog
 
 A simple implementation of tech blog with user authentication, draft view and comment functionality.
 
