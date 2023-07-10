@@ -13,15 +13,17 @@
 *_LOCAL_*.txt
 *_REMOTE_*.txt
 
-# To ignore virtual environment
+# To ignore virtual environment and secret env file
 venv-dev/
+secrets.env
 
-# To ignore cache, SQLite3 DB and .vercel files
+# To ignore cache, SQLite3 DB, .env and .vercel files
 __pycache__
 *.pyc
 *.log
 db.sqlite3
 .vercel
+.env
 
 # To ignore collectstatic files at STATIC_ROOT
 staticfiles/
