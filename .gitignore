@@ -16,4 +16,8 @@
 # To ignore virtual environment
 venv-dev/
 
+# To ignore cache
 __pycache__
+
+# To ignore collectstatic files at STATIC_ROOT
+staticfiles/
