@@ -15,3 +15,5 @@
 
 # To ignore virtual environment
 venv-dev/
+
+__pycache__
