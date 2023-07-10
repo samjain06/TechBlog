@@ -6,7 +6,7 @@ NOTE: Currently, new post can only be done by superuser.
 
 This Tech Blog application is deployed on Vercel and can be accessed by using link below:
 
-https://samtechblog.vercel.com
+https://samtechblog.vercel.app
 
 This application backend is done using Django. 
 Static files are compressed and hosted by WhiteNoise backend storage.
