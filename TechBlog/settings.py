@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -147,5 +148,4 @@ if os.environ.get("VERCEL"):
     STATIC_ROOT = BASE_DIR / 'staticfiles'
 
     # Stores compressed static files with unique names in WhiteNoise backend storage
-    STATICFILES_STORAGE = \
-        'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
