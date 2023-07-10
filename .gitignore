@@ -16,8 +16,12 @@
 # To ignore virtual environment
 venv-dev/
 
-# To ignore cache
+# To ignore cache, SQLite3 DB and .vercel files
 __pycache__
+*.pyc
+*.log
+db.sqlite3
+.vercel
 
 # To ignore collectstatic files at STATIC_ROOT
 staticfiles/
